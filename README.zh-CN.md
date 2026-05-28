@@ -75,4 +75,4 @@ MIT License — 随便用。
 
 ---
 
-**联系：** 在Issue区留言，或在[知乎文章](https://zhuanlan.zhihu.com/p/2043539781901096255)评论区交流。
+**联系：** 在Issue区留言。

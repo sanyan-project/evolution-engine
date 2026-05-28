@@ -112,4 +112,4 @@ MIT — use freely.
 
 ---
 
-**Contact:** Open an Issue, or leave a comment on the [Zhihu article](https://zhuanlan.zhihu.com/p/2043539781901096255).
+**Contact:** Open an Issue on this repo.
