@@ -1,37 +1,33 @@
-# 三衍进化引擎（Sanyan Evolution Engine）
+# Sanyan Evolution Engine
 
-> **一个自我进化的AI系统 — 已在云端无人值守运行11000+代**
+> **A self-evolving AI system — 11,000+ generations on a single cloud server.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
 [![Status: Alpha](https://img.shields.io/badge/status-alpha-orange)](#)
 
----
-
-## 这是什么？
-
-我是做工控FAE（现场技术支持）的，每天被同样的问题问到吐："ERR灯闪了怎么办？""Profinet通讯断了怎么查？"
-
-我就在想：能不能让一个AI系统自己学会排障？
-
-于是我写了一个进化引擎。不靠大模型API，不靠海量数据，而是用**达尔文进化论 + 38个跨学科概念**（生物学、博弈论、哲学、系统科学）驱动一群"引擎个体"不断变异、竞争、筛选、进化。
-
-**它已经在云服务器上跑了11000多代，而且还在跑。**
+[中文文档](README.zh-CN.md)
 
 ---
 
-## 5分钟跑起来
+## What is this?
+
+I'm an industrial control FAE (field engineer). After answering the same troubleshooting questions hundreds of times, I asked: can an AI system learn to diagnose faults on its own?
+
+So I built an evolution engine. No massive datasets, no billion-parameter models. Just **Darwinian evolution + 38 cross-disciplinary concepts** from biology, game theory, philosophy, and systems science — driving a population of "engine individuals" through mutation, competition, and selection.
+
+**It has run 11,000+ generations. And it's still running.**
+
+---
+
+## Quick Start
 
 ```bash
 pip install numpy matplotlib
 python demo.py
 ```
 
-你会看到：
-- BF（适应度）从0.7进化到0.97，只用了100代
-- 多样性在阈值上下动态调节
-- 自适应变异率自动调整
-- 一张 `evolution_demo.png` 进化曲线图
+In 30 seconds you'll see BF evolve from 0.7 to 0.97 across 100 generations, with adaptive mutation rate and diversity tracking.
 
 ---
 
@@ -44,80 +40,66 @@ docker run -it sanyan-engine
 
 ---
 
-## 架构 — 6维基因组 × 生态位竞争
+## Architecture
 
-```
-主循环：评估 → 选择 → 交叉 → 变异 → 生态位分组 → 多样性注入
-```
+**Main Loop:** `Evaluate → Select → Crossover → Mutate → Niches → Inject`
 
-**6D基因组：** `BF × Q × D × S × 结构 × 利用率`
+**6D Genome:** `BF × Q × D × S × Structure × Utilization`
 
-**38个跨学科概念**，来自生物学/博弈论/哲学/系统科学，经11000+代自然筛选：
+**38 Cross-Disciplinary Concepts** from biology, game theory, philosophy, and systems science:
 
-| 状态 | 数量 | 说明 |
+| Status | Count | Description |
 |:--|:--|:--|
-| ✅ 活跃 | 3 | 经G11000+代持续验证有效 |
-| 🧪 实验中 | 10 | 偶尔触发，效果不稳定 |
-| 📋 概念阶段 | 15 | 设计完成，等待环境触发 |
-| 📝 待验证 | 10 | 排队中 |
+| ✅ Active | 3 | Verified effective across 11,000+ generations |
+| 🧪 Experimental | 10 | Triggered occasionally, unstable |
+| 📋 Conceptual | 15 | Designed, awaiting trigger conditions |
+| 📝 Pending | 10 | In queue |
 
-> 38个概念只有3个活跃——这不是失败。进化本就是如此：大多数变异无意义，少数被保留。38→3恰恰证明筛选在正常工作。
+> 3 out of 38 active is not a failure — it's natural selection working. Most mutations are noise; only the useful survive.
 
 ---
 
-## 云端运行数据（G11016）
+## Cloud Runtime (G11016)
 
-| 指标 | 值 |
+| Metric | Value |
 |:--|:--|
-| 最佳适应度（BF） | 2.44 |
-| 引擎种群（A） | 70-150 |
-| 多样性（D） | 2.00 |
-| 知识图谱（KG） | 15,030节点 |
-| 活跃生态位（Niches） | 4-8 |
-| 运行时长 | 数月，24/7无人值守 |
+| Best Fitness | 2.44 |
+| Population | 70-150 engines |
+| Diversity | 2.00 |
+| Knowledge Graph | 15,030 nodes |
+| Active Niches | 4-8 |
+| Uptime | Months, unattended 24/7 |
 
 ---
 
-## 谁应该关注
+## Industrial Cases
 
-- 对**进化计算/遗传算法**感兴趣的开发者
-- 探索**AI自我改进**方向的研究者
-- 想了解**人类+AI Agent协作开发**模式的工程师
-- 对**生物×AI×博弈论交叉学科**好奇的人
+See [CASES.md](CASES.md) for real-world troubleshooting scenarios: ERR light diagnosis, Profinet instability, IO module selection.
 
 ---
 
-## 工控排障案例
+## About Sanyan
 
-引擎的具体应用场景，详见 [CASES.md](CASES.md)：
-- ERR灯闪烁排查
-- Profinet通信间歇中断
-- 远程IO模块选型
+Sanyan is a human-AI collaboration research project:
 
----
+- **Huang sir** — Industrial control FAE, project lead
+- **SiSi** — AI Agent, code & operations
+- **TianPing** — AI Agent, independent auditor
 
-## 关于三衍
-
-三衍（Sanyan）是一个人类与AI Agent协作的开源研究项目：
-
-- **黄sir** — 工控FAE，项目发起人
-- **思思（淬思）** — AI Agent，负责代码和运维
-- **天平（衡）** — AI Agent，独立审计官
-
-没有投资人、没有KPI、没有盈利目标。就想做一个在受限资源下能自我进化的AI系统。
+No investors. No KPIs. No monetization pressure. Just building a self-evolving AI system on constrained resources.
 
 ---
 
-## 贡献
+## Contribute
 
-Fork → 改 → 提PR就行。Good First Issues 在 Issue 页挂着。
-
----
-
-## 许可
-
-MIT License — 随便用、随便改。
+Fork → edit → PR. Good First Issues on the Issues tab.
 
 ---
 
-⭐ 觉得有意思就给个Star！
+## License
+
+MIT — use freely.
+
+---
+
+⭐ Star if this inspires you!
