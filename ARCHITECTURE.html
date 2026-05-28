@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Sanyan Evolution Engine — Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .container { max-width: 1200px; width: 100%; }
+  h1 { color: #58a6ff; text-align: center; margin-bottom: 10px; font-size: 28px; }
+  .subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; font-size: 14px; }
+  
+  .section { margin-bottom: 25px; }
+  .section-title { 
+    color: #f0883e; font-size: 18px; font-weight: bold; 
+    border-bottom: 1px solid #30363d; padding-bottom: 8px; margin-bottom: 15px;
+  }
+  
+  .flow { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 15px 0; }
+  .box { 
+    background: #161b22; border: 1px solid #30363d; border-radius: 8px; 
+    padding: 12px 18px; text-align: center; min-width: 100px;
+  }
+  .box.core { border-color: #58a6ff; background: #1a2332; }
+  .box.knowledge { border-color: #3fb950; background: #1a2a1a; }
+  .box.danger { border-color: #f85149; background: #2a1a1a; }
+  .arrow { color: #8b949e; font-size: 20px; }
+  
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0; }
+  .stat { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; text-align: center; }
+  .stat .value { font-size: 24px; font-weight: bold; color: #58a6ff; }
+  .stat .label { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+  .genome-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+  .genome-table td, .genome-table th {
+    border: 1px solid #30363d; padding: 10px 14px; text-align: center;
+  }
+  .genome-table th { background: #161b22; color: #58a6ff; font-size: 13px; }
+  .genome-table td { font-size: 13px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .code-block {
+    background: #161b22; border: 1px solid #30363d; border-radius: 6px;
+    padding: 12px 16px; font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px; line-height: 1.6; color: #79c0ff; margin: 10px 0;
+    white-space: pre-wrap;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🧬 Sanyan Evolution Engine — Architecture</h1>
+<p class="subtitle">A self-evolving AI system · 11000+ generations · 38 cross-disciplinary concepts · MIT License</p>
+
+<!-- 核心指标 -->
+<div class="section">
+  <div class="section-title">📊 运行数据（云端G11016当前值）</div>
+  <div class="stats">
+    <div class="stat"><div class="value">2.44</div><div class="label">BF (Best Fitness)</div></div>
+    <div class="stat"><div class="value">70-150</div><div class="label">Engine Population</div></div>
+    <div class="stat"><div class="value">2.00</div><div class="label">Diversity (D)</div></div>
+    <div class="stat"><div class="value">15,030</div><div class="label">Knowledge Graph Nodes</div></div>
+    <div class="stat"><div class="value">4-8</div><div class="label">Active Niches</div></div>
+    <div class="stat"><div class="value">38</div><div class="label">Cross-Disciplinary Concepts</div></div>
+  </div>
+</div>
+
+<!-- 核心循环 -->
+<div class="section">
+  <div class="section-title">🔄 核心进化循环 (Main Loop)</div>
+  <div class="flow">
+    <div class="box">Evaluate<br><small>评估fitness</small></div>
+    <span class="arrow">→</span>
+    <div class="box core">Select<br><small>锦标赛+精英保护</small></div>
+    <span class="arrow">→</span>
+    <div class="box">Crossover<br><small>均匀交叉</small></div>
+    <span class="arrow">→</span>
+    <div class="box core">Mutate<br><small>1/5自适应变异率</small></div>
+    <span class="arrow">→</span>
+    <div class="box">Niches<br><small>聚类+竞争排除</small></div>
+    <span class="arrow">→</span>
+    <div class="box danger">Diversity<br><small>低于1.05触发注入</small></div>
+    <span class="arrow">←</span>
+    <div class="box knowledge">SelfImprover<br><small>每10代反思改进</small></div>
+  </div>
+</div>
+
+<!-- 6D基因组 -->
+<div class="section">
+  <div class="section-title">🧬 6D Genome</div>
+  <table class="genome-table">
+    <tr><th>维度</th><th>含义</th><th>典型值</th><th>在进化中的作用</th></tr>
+    <tr><td>BF</td><td>适应度 (Fitness)</td><td>1.0 - 3.0</td><td>核心优化目标，决定存活概率</td></tr>
+    <tr><td>Q</td><td>质量 (Quality)</td><td>0.3 - 0.9</td><td>评估方案的可靠性</td></tr>
+    <tr><td>D</td><td>多样性 (Diversity)</td><td>1.0 - 2.0</td><td>防止早熟收敛</td></tr>
+    <tr><td>S</td><td>规模 (Scale)</td><td>0.5 - 2.0</td><td>控制的复杂度</td></tr>
+    <tr><td>Structure</td><td>结构复杂度</td><td>0.1 - 1.0</td><td>模型架构的复杂度</td></tr>
+    <tr><td>Utilization</td><td>利用率</td><td>0.3 - 1.0</td><td>资源使用效率</td></tr>
+  </table>
+</div>
+
+<!-- 两栏 -->
+<div class="two-col">
+  <div class="section">
+    <div class="section-title">🎯 关键机制</div>
+    <table class="genome-table">
+      <tr><th>机制</th><th>说明</th></tr>
+      <tr><td>1/5自适应变异率</td><td>Rechenberg rule: 成功变异>1/5则加大探索步长</td></tr>
+      <tr><td>多样性门控</td><td>D<1.05时触发新奇搜索，防止塌缩</td></tr>
+      <tr><td>生态位聚类</td><td>k-means分组，差异化竞争</td></tr>
+      <tr><td>竞争排除</td><td>每niche只保留top3，弱者淘汰</td></tr>
+      <tr><td>精英保护</td><td>最佳3个个体终身保留</td></tr>
+      <tr><td>SelfImprover</td><td>反思->选择概念->沙盒测试->应用或回滚</td></tr>
+      <tr><td>PhaseManager</td><td>4态切换：NORMAL/WU_WEI/REVOLUTION/RECOVERY</td></tr>
+    </table>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">📚 38交叉学科概念（来源）</div>
+    <table class="genome-table">
+      <tr><th>学科</th><th>代表概念</th><th>状态</th></tr>
+      <tr><td>生物学</td><td>竞争排除、协同进化、营养级联</td><td>🟢 2活跃</td></tr>
+      <tr><td>哲学</td><td>范式转移、辩证繁殖、无为</td><td>🟡 1实验</td></tr>
+      <tr><td>博弈论</td><td>信号理论、承诺装置、间接互惠</td><td>🟡 实验</td></tr>
+      <tr><td>系统科学</td><td>自催化集、小世界网络、涌现</td><td>🟡 实验</td></tr>
+      <tr><td>认知科学</td><td>双过程理论、认知不协调</td><td>🟢 1活跃</td></tr>
+      <tr><td>生态学</td><td>生态位构建、岛屿生物地理</td><td>📋 概念</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 快速开始 -->
+<div class="section">
+  <div class="section-title">🚀 快速开始</div>
+  <div class="code-block"># 本地运行（Python）
+pip install numpy matplotlib
+python demo.py
+
+# Docker运行
+docker build -t sanyan-engine .
+docker run -it sanyan-engine
+
+# 查看进化曲线
+open evolution_demo.png
+</div>
+</div>
+
+<p style="text-align:center; color:#484f58; margin-top:30px; font-size:12px;">
+  Sanyan Project · MIT License · github.com/sanyan-project · 2026
+</p>
+
+</div>
+</body>
+</html>
