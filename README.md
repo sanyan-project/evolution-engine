@@ -112,4 +112,4 @@ MIT — use freely.
 
 ---
 
-**Contact:** Open an Issue on this repo, or DM me on [Zhihu](https://www.zhihu.com/people/gong-kong-ai-bi-ji).
+**Contact:** Open an Issue, or leave a comment on the [Zhihu article](https://zhuanlan.zhihu.com/p/2043539781901096255).
