@@ -29,6 +29,8 @@ python demo.py
 
 In 30 seconds you'll see BF evolve from 0.7 to 0.97 across 100 generations, with adaptive mutation rate and diversity tracking.
 
+![Demo Output](evolution_demo.png)
+
 ---
 
 ## Docker
@@ -92,7 +94,11 @@ No investors. No KPIs. No monetization pressure. Just building a self-evolving A
 
 ## Contribute
 
-Fork → edit → PR. Good First Issues on the Issues tab.
+Fork → edit → PR. Starter ideas:
+- Add more industrial control cases
+- Implement concept #4 (Borda ranking)
+- Improve diversity visualization
+- Translate docs to your language
 
 ---
 
