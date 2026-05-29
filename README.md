@@ -61,16 +61,22 @@ docker run -it sanyan-engine
 
 ---
 
-## Cloud Runtime (G11016)
+## Live Metrics
 
-| Metric | Value |
-|:--|:--|
-| Best Fitness | 2.44 |
-| Population | 70-150 engines |
-| Diversity | 2.00 |
-| Knowledge Graph | 15,030 nodes |
-| Active Niches | 4-8 |
-| Uptime | Months, unattended 24/7 |
+![Engine Trend](engine_trend.png)
+
+*Real data from 500 recent generations (G11475-G11958)*
+
+| Metric | Description | Healthy Range |
+|:--|:--|:--|
+| **BF** (Best Fitness) | Core optimization target | 1.5-3.0 |
+| **D** (Diversity) | Population diversity — triggers novelty injection below 1.05 | 1.0-2.0 |
+| **KG** (Knowledge Graph) | Accumulated knowledge nodes | Steady growth |
+| **A** (Alive) | Active engine population | 50-200 |
+| **Niches** | Auto-grouped competition zones | 3-10 |
+| **F** | Composite: F = (BF × D × Utilization) | Higher better |
+
+The chart shows BF oscillating at 2.0-2.5 (healthy), diversity at 1.5-2.0 (anti-collapse), and KG steadily growing (normal knowledge accumulation).
 
 ---
 
