@@ -52,7 +52,7 @@ docker run -it sanyan-engine
 
 | Status | Count | Description |
 |:--|:--|:--|
-| ✅ Active | 3 | Verified effective across 11,000+ generations |
+| ✅ Active | 5 | Verified effective across 11,000+ generations |
 | 🧪 Experimental | 10 | Triggered occasionally, unstable |
 | 📋 Conceptual | 15 | Designed, awaiting trigger conditions |
 | 📝 Pending | 10 | In queue |
@@ -119,3 +119,8 @@ MIT — use freely.
 ---
 
 **Contact:** Open an Issue on this repo.
+
+## Sanyan Ecosystem
+
+- [sanyan-evolve](https://github.com/sanyan-project/sanyan-evolve) — Self-evolving Agent (Reasonix subagent)
+- [agent-protocol](https://github.com/sanyan-project/agent-protocol) — Human-AI Collaboration Spec

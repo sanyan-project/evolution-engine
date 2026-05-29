@@ -43,7 +43,7 @@ python demo.py
 
 | 状态 | 数量 | 说明 |
 |:--|:--|:--|
-| ✅ 活跃 | 3 | G11000+代持续验证有效 |
+| ✅ 活跃 | 5 | G11000+代持续验证有效 |
 | 🧪 实验中 | 10 | 偶尔触发，效果不稳定 |
 | 📋 概念阶段 | 15 | 设计完成，等待环境触发 |
 | 📝 待验证 | 10 | 排队中 |
@@ -89,3 +89,8 @@ MIT License — 随便用。
 ---
 
 **联系：** 在Issue区留言。
+
+## 三衍生态
+
+- [sanyan-evolve](https://github.com/sanyan-project/sanyan-evolve) — 自进化Agent（Reasonix subagent）
+- [agent-protocol](https://github.com/sanyan-project/agent-protocol) — 人类+AI协作规范
