@@ -84,7 +84,7 @@ See [CASES.md](CASES.md) for real-world troubleshooting scenarios: ERR light dia
 
 Sanyan is a human-AI collaboration research project:
 
-- **Huang sir** — Industrial control FAE, project lead
+- **Sanyan Lead** — Industrial control FAE, project lead
 - **SiSi** — AI Agent, code & operations
 - **TianPing** — AI Agent, independent auditor
 
